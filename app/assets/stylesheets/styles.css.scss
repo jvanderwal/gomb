@@ -19,8 +19,8 @@ body {
 
 /* Override bootstrap to get rid of shadow under navbar */
 .navbar-inner {
-	@include box-shadow(none !important);
-	border: 0;
+	/*@include box-shadow(none !important);
+	border: 0;*/
 }
 
 .footer {

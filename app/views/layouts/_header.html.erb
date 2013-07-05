@@ -17,16 +17,35 @@
       	<ul class="nav">
 	        <li><%= link_to "Home", root_path %></li>
 					<li><%= link_to "About", about_path %></li>
-				</ul>
+        </ul>
 				<ul class="nav pull-right">
           <% if user_signed_in? %>
             <li><%= link_to "Edit Profile", edit_user_registration_path %> </li>
             <!-- Have to do method: :delete for any logout methods -->
             <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
           <% else %>
-	        <li><%= link_to "Login", new_user_session_path %></li>
+            <li><%= link_to "Login", new_user_session_path %></li>
           <% end %>
 				</ul>
+        <div>
+          <form action="/search" class="navbar-search form-search input-append pull-right">
+            <ul class="input-append">  
+              <input class="search-query" name="q" placeholder="Plate Number: 34G598, etc" type="text" value>
+              <button class="btn btn-success" type="submit">Search</button>
+            </ul>
+          </form>
+          <div class="btn-group pull-right">
+            <button class="btn">State</button>
+            <button class="btn dropdown-toggle" data-toggle="dropdown">
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li>AK</li>
+              <li>NJ</li>
+              <li>OH</li>
+            </ul>
+          </div>
+        </div>
       </div>
  
     </div>
